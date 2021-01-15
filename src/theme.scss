@@ -1,0 +1,74 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$md-mcgpalette0: (
+    50 : #fbeded,
+    100 : #f6d1d1,
+    200 : #f0b3b3,
+    300 : #e99494,
+    400 : #e57d7d,
+    500 : #e06666,
+    600 : #dc5e5e,
+    700 : #d85353,
+    800 : #d34949,
+    900 : #cb3838,
+    A100 : #ffffff,
+    A200 : #ffe2e2,
+    A400 : #ffafaf,
+    A700 : #ff9696,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+// -----------------------------------------------------------------------------------------------------
+// @ Define the default theme
+// -----------------------------------------------------------------------------------------------------
+
+$my-hq-primary: mat-palette($md-mcgpalette0, A100);
+$my-hq-accent:  mat-palette($md-mcgpalette0, 700);
+$my-hq-warn:    mat-palette($mat-deep-orange);
+
+$my-hq-theme: mat-light-theme((
+    color: (
+        primary: $my-hq-primary,
+        accent: $my-hq-accent,
+        warn: $my-hq-warn
+    )
+));
+
+@include angular-material-theme($my-hq-theme);
+.alternate-theme {
+    $alternate-primary: mat-palette($mat-light-blue);
+    $alternate-accent:  mat-palette($mat-yellow, 400);
+    $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Typography
+// -----------------------------------------------------------------------------------------------------
+
+// Force the input field font sizes to 16px
+$typography: mat-typography-config(
+    $font-family: 'Muli, Helvetica Neue, Arial, sans-serif',
+    $title: mat-typography-level(20px, 32px, 600),
+    $body-1: mat-typography-level(14px, 24px, 600),
+    $button: mat-typography-level(14px, 14px, 600),
+    $input: mat-typography-level(16px, 1.125, 400) // line-height must be unitless !!!
+);
+
+// Setup the typography
+@include angular-material-typography($typography);
