@@ -8,6 +8,8 @@ import { MaterialModule } from '../../../material/material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AuthService } from 'src/app/services/auth.service';
+import { StorageService } from 'src/app/services/storage.service';
+
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -22,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
 
     HttpClientModule
   ],
-  providers: [AuthService]
+  providers: [
+    AuthService,
+    StorageService
+  ]
 })
 export class LoginModule { }
