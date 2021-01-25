@@ -27,12 +27,18 @@ mat-toolbar {
     color: dimgrey;
 }
 
+.logo_header {
+    vertical-align: top;
+    margin-right  : 5px;
+}
+
 @media(max-width: 959px) {
     mat-toolbar {
         border-radius: 0px;
     }
     .header {
-        padding-left: 10px;
+        padding-left: 20px;
         padding-right: 10px;
+        height: 64px;
     }
 }

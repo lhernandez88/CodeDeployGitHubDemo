@@ -13,7 +13,13 @@
   <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
 
   </div> -->
+<div class="nav_list">
+    <span class="textHeader">
+        <img src="../../../assets/MC_HQ/images/logo.png" class="logo_nav_list">
+        My Consulting HQ</span>
+    <!-- <a routerLink="/home" class="textHeader">Owner-Account</a> -->
+</div>
 
-<mat-nav-list>
+<mat-nav-list color="primary">
     <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item"> {{item | titlecase}} </a>
 </mat-nav-list>

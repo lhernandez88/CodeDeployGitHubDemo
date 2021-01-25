@@ -5,25 +5,45 @@
         </button>
     </div>
     <div>
-        <span class="textHeader">Owner-Account</span>
+        
+        <span class="textHeader">
+            <img src="../../../assets/MC_HQ/images/logo.png" class="logo_header">
+            My Consulting HQ</span>
         <!-- <a routerLink="/home" class="textHeader">Owner-Account</a> -->
     </div>
     <div fxFlex fxLayout fxLayoutAlign="end" fxHide.lt-md>
         <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <!-- only visible if user is authenticated -->
+            <li>
+                <button mat-raised-button style="box-shadow: none;" [matMenuTriggerFor]="menu">
+                    Manage
+                    <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item style="font-weight: normal;">Categories</button>
+                    <button mat-menu-item style="font-weight: normal;">Subcategories</button>
+                    <button mat-menu-item style="font-weight: normal;">Tags</button>
+                    <button mat-menu-item style="font-weight: normal;">Articles</button>
+                    <button mat-menu-item style="font-weight: normal;">Books</button>
+                </mat-menu>
+            </li>
+            <!-- end -> only visible if user is authenticated -->
+
             <li>
                 <button mat-raised-button color="accent">Sing up</button>
                 <!-- <a routerLink="/owner">Sing Up</a> -->
             </li>
             <li>
-                <button mat-raised-button style="border: 1px solid firebrick; color: firebrick;"
-                    routerLink="/login">Log in</button>
-                <!-- <a routerLink="/login">Login</a> -->
+                <button mat-raised-button style="border: 1px solid firebrick; color: firebrick;">Log in</button>
+                <!-- routerLink="/login" -->
             </li>
-            <li>
+
+            <!-- only visible if user is authenticated -->
+            <!-- <li>
                 <button mat-raised-button style="border: 1px solid firebrick; color: firebrick;" (click)="logout()">
                     Log out
                 </button>
-            </li>
+            </li> -->
         </ul>
     </div>
   </mat-toolbar>

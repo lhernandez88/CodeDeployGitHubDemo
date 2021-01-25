@@ -17,5 +17,6 @@ export class SidenavListComponent implements OnInit {
     this.sidenavClose.emit();
   }
 
-  menuItems = ['dashboard', 'sales', 'orders', 'customers', 'products'];
+  //modify menu depending on whether the user is authenticated or not
+  menuItems = ['Categories', 'Subcategories', 'Tags', 'Articles', 'Books', 'Log out'];
 }
