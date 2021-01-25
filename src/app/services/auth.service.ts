@@ -55,21 +55,22 @@ export class AuthService {
     return this.currentUser$;
   }
 
-//   public logout(): Observable<any> {
-//     return this.http.post(`${this.apiUrl}/logout`, {}).pipe(
-//       catchError((err) => {
-//         const apiError: any = err.error;
-//         const statusCode = !!apiError ? apiError.statusCode : err.status;
-// ​
-//         if (statusCode === StatusCodes.UNAUTHORIZED || statusCode === StatusCodes.FORBIDDEN) {
-//           // active user token has already expired, not need to invalidate it
-//           return of(true);
-//         }
-//         return throwError(err);
-//       }),
-//       finalize(() => this.publishUserUpdate(null))
-//     );
-//   }
+  public logout(): Observable<any> {
+    return this.http.post(`${this.apiUrl}/logout`, {}).pipe(
+      catchError((err) => {
+        const apiError: any = err.error;
+        const statusCode = !!apiError ? apiError.statusCode : err.status;
+​
+        //if (statusCode === StatusCodes.UNAUTHORIZED || statusCode === StatusCodes.FORBIDDEN) {
+          if (statusCode === 401 || statusCode === 400) {
+          // active user token has already expired, not need to invalidate it
+          return of(true);
+        }
+        return throwError(err);
+      }),
+      finalize(() => this.publishUserUpdate(null))
+    );
+  }
 
 
 }

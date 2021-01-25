@@ -11,6 +11,9 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './footer/footer.component';
 
+import { AuthService } from 'src/app/services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+
 const routes: Routes = []; 
 
 @NgModule({
@@ -21,7 +24,9 @@ const routes: Routes = [];
 
     MaterialModule,
 
-    FlexLayoutModule
+    FlexLayoutModule,
+
+    HttpClientModule
   ],
   exports: [
     LayoutComponent, 
@@ -29,6 +34,9 @@ const routes: Routes = [];
     HeaderComponent,
     SidenavListComponent,
     FooterComponent
+  ], 
+  providers: [
+    AuthService
   ]
 })
 export class LayoutModule { }

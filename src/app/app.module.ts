@@ -10,7 +10,7 @@ import { LayoutModule } from './layout/layout.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeModule } from './main/home/home.module';
 // import { MatSidenavModule } from '@angular/material/sidenav';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { HomeModule } from './main/home/home.module';
     FlexLayoutModule,
     HomeModule,
     // MatSidenavModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
